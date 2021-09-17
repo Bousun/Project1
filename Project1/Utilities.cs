@@ -35,8 +35,7 @@ namespace Project1
                 Console.WriteLine(choiceInt);
                 if (choiceInt == -1)
                 {
-                    Console.WriteLine("end");
-                    
+                    //Console.WriteLine("end");                 
 
                     returnval = -1;
                     break;
@@ -46,7 +45,7 @@ namespace Project1
                 {
                     isValid = true;
                     returnval = choiceInt;
-                    Console.WriteLine("entering");
+                    //Console.WriteLine("entering");
                 }
                 else
                     Console.WriteLine("Invalid Input..enter again!");
