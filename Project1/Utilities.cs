@@ -26,29 +26,32 @@ namespace Project1
 
             Console.WriteLine();
             Console.WriteLine("Enter your choice : ");
-            do
+            while(isValid == false)
             {
                 choice = Console.ReadLine();
                 int choiceInt;
                 bool parseSuccess = int.TryParse(choice, out choiceInt);
 
+                Console.WriteLine(choiceInt);
                 if (choiceInt == -1)
                 {
                     Console.WriteLine("end");
                     
+
                     returnval = -1;
                     break;
                 }
 
-                if (parseSuccess && (choiceInt - 1) < inputList.Count)
+                else if (parseSuccess && ( (choiceInt -1) < inputList.Count) && (choiceInt   > -1))
                 {
                     isValid = true;
                     returnval = choiceInt;
+                    Console.WriteLine("entering");
                 }
                 else
                     Console.WriteLine("Invalid Input..enter again!");
 
-            } while (isValid == false);
+            };
 
             return returnval;
         }

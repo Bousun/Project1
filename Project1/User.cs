@@ -18,7 +18,7 @@ namespace Project1
 
             bool isValid = false;
             var choice = "";
-            int returnval = 0;
+            int returnval = 0;           
 
             Console.WriteLine("Select from the following : (-1 to go back/exit)");
 
@@ -45,7 +45,7 @@ namespace Project1
                     break;
                 }
 
-                if (parseSuccess && (choiceInt - 1) < UserMode.Count)
+                if (parseSuccess && ((choiceInt - 1) < UserMode.Count) && choiceInt >-1)
                 {
                     isValid = true;
                     returnval = choiceInt;

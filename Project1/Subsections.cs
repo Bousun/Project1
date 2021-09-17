@@ -121,9 +121,24 @@ namespace Project1
                     //experience
                 }
                 else if (subsection == 2)
-                { 
-                    //
+                {
+                    //education
                 }
+                else if (subsection == 3)
+                {
+                    //skills
+
+                }
+                else if (subsection == 4)
+                {
+                    //technogical skills
+                }
+                else if (subsection == 5)
+                { 
+                    //contact details
+                }
+
+
 
                 UserMode.getSubsectionAdminMode();
 
