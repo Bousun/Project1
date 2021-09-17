@@ -12,7 +12,7 @@ namespace Project1
         public void Display()
         {
             Console.WriteLine("Select from the following : (-1 to go back/exit)");
-            var path = "UserInformation.csv";
+            var path = @"C:/Users/p128612/source/repos/Project1/Project1/UserInformation.csv";
 
             var allDetails = FileOperations.SplittingLine(path);
 

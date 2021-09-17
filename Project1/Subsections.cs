@@ -98,7 +98,7 @@ namespace Project1
                     var desciption = Console.ReadLine();
 
 
-                    operation.Create("Experience", companyName, yearint.ToString(),desciption );
+                    operation.Create(companyName,yearint.ToString(),desciption);
                     UserMode.getSubsectionAdminMode();
                 }
 
@@ -110,6 +110,14 @@ namespace Project1
             else if (choice == 3)
             {
                 //update operation
+
+                //create operation
+                Console.WriteLine("Update operation");
+                MenuSubsections subsectionInstance = new MenuSubsections();
+                var subsectionList = subsectionInstance.getSubsectionList;
+
+                var subsection = Utilities.VerifyInputList(subsectionList);
+
             }
             else if (choice == 4)
             { 

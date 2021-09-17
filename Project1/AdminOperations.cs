@@ -10,18 +10,23 @@ namespace Project1
     class AdminOperations : IOperationsOfAdmin
     {
 
-        public void Create(string field1, string field2, string field3, string field4)
+        public void Create(string field2, string field3, string field4)
         {
-            var filePath = "C:/Users/p128612/source/repos/Project1/Project1/UserInformation.csv";
-            var delimiter = ",";
-            var csv = new StringBuilder();
+            var delimiter = ",";      
 
             var newline = String.Concat("Experience", delimiter, field2, delimiter, field3, delimiter, field4);
-
-            csv.AppendLine(newline);
-
-            File.AppendAllText(filePath, newline.ToString());
-            Console.WriteLine("Entry Successful");
+            try
+            {
+                var path = @"C:/Users/p128612/source/repos/Project1/Project1/UserInformation.csv";
+                using (StreamWriter file = new StreamWriter(path, true))
+                {
+                    file.WriteLine(newline);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException();
+            }
         }
     }
 }
