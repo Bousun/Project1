@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 namespace Project1
 {
     class ModeUser
-    {
-        private Dictionary<int, string> _modeUserDict = new Dictionary<int, string>
+    {   
+        private List<string> _modeUserList = new List<string>
         {
-            {1 ,"Guest"},
-            {2,"Admin"}
+            {"Guest"},
+            {"Admin"}
         };
 
-        public Dictionary<int, string> OptionsLists
+        public List<string> getmodeUserList
         {
-            get => _modeUserDict;
+            get => _modeUserList;
         }
 
     }

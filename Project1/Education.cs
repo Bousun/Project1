@@ -2,18 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.IO;
 using System.Threading.Tasks;
 
 namespace Project1
 {
-    public class Experience : IMenu
+    class Education : IMenu
     {
 
-        //public Experience() 
-        //{
-        //    getExperience();
-        //}
         public void Display()
         {
             Console.WriteLine("Select from the following : (-1 to go back/exit)");
@@ -21,7 +16,7 @@ namespace Project1
 
             var allDetails = FileOperations.SplittingLine(path);
 
-            Dictionary<int, List<string>> dict = FileOperations.returnFieldNameDictionary("Experience");
+            Dictionary<int, List<string>> dict = FileOperations.returnFieldNameDictionary("Education");
             foreach (KeyValuePair<int, List<string>> item in dict)
             {
                 Console.WriteLine($"{item.Key}. {item.Value[1]} ({item.Value[2]})");
@@ -50,24 +45,27 @@ namespace Project1
 
                 if (parseSuccess && (choiceInt - 1) < allDetails.Count)
                 {
+                    //Console.WriteLine($"Your choice is {choiceInt}");
                     isValid = true;
                     returnval = choiceInt;
                     //display job description
-                    lastStep(returnval, "Experience");
+                    lastStep(returnval, "Education");
 
                 }
                 else
                     Console.WriteLine("Invalid Input..enter again!");
-               
 
             } while (isValid == false);
         }
+
         public static void lastStep(int choice, string fieldname)
         {
+
             Utilities.getDescriptionOrModule(choice, fieldname);
-            Experience exp = new Experience();
-            exp.Display();
+            Education edu = new Education();
+            edu.Display();
         }
+
+
     }
 }
-

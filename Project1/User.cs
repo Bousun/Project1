@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace Project1
 {
-    class Utilities
+    class User
     {
-        
-        public static int VerifyInputList(List<string> inputList)
+        public static void GuestOrAdmin()
         {
+
+            UserMode usermode = new UserMode();
+
+            ModeUser menu = new ModeUser();
+            var UserMode = menu.getmodeUserList;
+
             bool isValid = false;
             var choice = "";
             int returnval = 0;
@@ -18,10 +23,10 @@ namespace Project1
             Console.WriteLine("Select from the following : (-1 to go back/exit)");
 
 
-            foreach (var item in inputList)
+            foreach (var item in UserMode)
             {
-                var index = inputList.FindIndex(a => a == item);
-                Console.WriteLine($"{index +1} : {item}");
+                var index = UserMode.FindIndex(a => a == item);
+                Console.WriteLine($"{index + 1} : {item}");
             }
 
             Console.WriteLine();
@@ -35,36 +40,28 @@ namespace Project1
                 if (choiceInt == -1)
                 {
                     Console.WriteLine("end");
-                    
+                    Environment.Exit(0);
                     returnval = -1;
                     break;
                 }
 
-                if (parseSuccess && (choiceInt - 1) < inputList.Count)
+                if (parseSuccess && (choiceInt - 1) < UserMode.Count)
                 {
                     isValid = true;
                     returnval = choiceInt;
+                    //parse choiceint into a function that will display menu guest for user.
+                    usermode.getUserMode(choiceInt);                   
+                    
                 }
                 else
                     Console.WriteLine("Invalid Input..enter again!");
 
             } while (isValid == false);
 
-            return returnval;
-        }
-
-        public static void getDescriptionOrModule(int choice, string fieldname)
-        {
-            Dictionary<int, List<string>> dict = FileOperations.returnFieldNameDictionary(fieldname);
-
-            foreach (KeyValuePair<int, List<string>> item in dict)
-            {
-                if (choice == item.Key)
-                    Console.WriteLine($"{item.Value[3]}");
-
-            }
+           
 
         }
 
+        
     }
 }
