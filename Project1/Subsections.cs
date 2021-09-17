@@ -110,13 +110,22 @@ namespace Project1
             else if (choice == 3)
             {
                 //update operation
-
-                //create operation
                 Console.WriteLine("Update operation");
                 MenuSubsections subsectionInstance = new MenuSubsections();
                 var subsectionList = subsectionInstance.getSubsectionList;
 
                 var subsection = Utilities.VerifyInputList(subsectionList);
+
+                if (subsection == 1)
+                {
+                    //experience
+                }
+                else if (subsection == 2)
+                { 
+                    //
+                }
+
+                UserMode.getSubsectionAdminMode();
 
             }
             else if (choice == 4)
